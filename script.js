@@ -1,22 +1,37 @@
 const result = document.querySelector('.result');
-const numbers = document.querySelector('.digit');
+const numbers = document.querySelectorAll('.digits');
 const input = document.querySelector('.userInput');
 const calculator = document.querySelector('.calculator');
 
-let passedEqual = false; // to see if = is pressed
+let isEqualPressed = false; // to see if = is pressed
 let displayValue = 0; // to calculate each operation in the background
-let passedDecimal = ''; //to see if . is pressed once and only once
-
-numbers.addEventListener('click', (e) => {
-    const key = e.target;
-    const keyValue = key.textContent;
-    let display = input.textContent;
-    const {type} = key.dataset;
-    const {lastKeyType} = calculator.dataset;
-});
+let isDecimalPressed = ''; //to see if . is pressed once and only once
 
 
+// create evenListeners for each buttons that shows on screen when clicked.
+numbers.forEach((number) => {
+    number.addEventListener('click', (e) => {
+         document.getElementById('userInput').innerHTML = e.target.value;
+    })
+})
 
+
+
+
+
+// store the first number that user presses into the calculator.
+// and also save which operator has been chosen and then operate() on them 
+// when = is pressed.
+
+
+
+
+
+
+
+
+
+// basic operators
 function addition(a, b){
     return a + b;
 }
@@ -38,6 +53,7 @@ function division(a, b){
     }
 }
 
+// function to call on numbers
 function operate(func, a, b){
     if (func === addition){
         return addition(a, b);
@@ -50,6 +66,5 @@ function operate(func, a, b){
     }
 }
 
-function display() {
-    
-}
+
+
