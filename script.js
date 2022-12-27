@@ -59,8 +59,8 @@ negativeBtn.addEventListener('click', negBtnClicked);
 
 function usedOperator(clickedOperator) {
     // prevents to click operators first
-    if (num1 != ''){
-        if (num2 == ''){
+    if (num1 != ""){
+        if (num2 == ""){
             switch(clickedOperator){
                 case "+":
                     operator = "+";
@@ -78,7 +78,7 @@ function usedOperator(clickedOperator) {
             isOperatorClicked = true;
             document.getElementById('topText').innerText = `${num1} ${operator} ${num2}`;
         }
-        else if (num2 !="") {
+        else if (num2 != "") {
             switch(clickedOperator){
                 case "+":
                     operator = "+";
@@ -102,15 +102,172 @@ function usedOperator(clickedOperator) {
     } 
 }
 
+// function for using operators on numbers
 
+function operate() {
+    switch(operator){
+        case "+":
+            result = add(num1, num2);
+            break;
+        case "-":
+            result = subtract(num1, num2);
+            break;
+        case "x":
+            result = multiply(num1, num2);
+            break;
+        case "/": 
+            result = divide(num1, num2);
+            break;
+    }
+    document.getElementById('topText').innerText = `${num1} ${operator} ${num2} =`;
+    document.getElementById('bottomText').innerText = result;
+}
 
+// functions for number eventListeners
 
+function btn0Clicked() {
+    if(isOperatorClicked == false && num1.length < 12) {
+        num1 += 0;
+        document.getElementById('bottomText').innerText = num1;
+    } else if(isOperatorClicked == true && num2.length < 12){
+        num2 += 0;
+        document.getElementById('bottomText').innerText = num2;
+    }
+}
 
+function btn1Clicked() {
+    if(isOperatorClicked == false && num1.length < 12) {
+        num1 += 1;
+        document.getElementById('bottomText').innerText = num1;
+    } else if(isOperatorClicked == true && num2.length < 12){
+        num2 += 1;
+        document.getElementById('bottomText').innerText = num2;
+    }
+}
 
+function btn2Clicked() {
+    if(isOperatorClicked == false && num1.length < 12) {
+        num1 += 2;
+        document.getElementById('bottomText').innerText = num1;
+    } else if(isOperatorClicked == true && num2.length < 12){
+        num2 += 2;
+        document.getElementById('bottomText').innerText = num2;
+    }
+}
 
+function btn3Clicked() {
+    if(isOperatorClicked == false && num1.length < 12) {
+        num1 += 3;
+        document.getElementById('bottomText').innerText = num1;
+    } else if(isOperatorClicked == true && num2.length < 12){
+        num2 += 3;
+        document.getElementById('bottomText').innerText = num2;
+    }
+}
 
+function btn4Clicked() {
+    if(isOperatorClicked == false && num1.length < 12) {
+        num1 += 4;
+        document.getElementById('bottomText').innerText = num1;
+    } else if(isOperatorClicked == true && num2.length < 12){
+        num2 += 4;
+        document.getElementById('bottomText').innerText = num2;
+    }
+}
 
+function btn5Clicked() {
+    if(isOperatorClicked == false && num1.length < 12) {
+        num1 += 5;
+        document.getElementById('bottomText').innerText = num1;
+    } else if(isOperatorClicked == true && num2.length < 12){
+        num2 += 5;
+        document.getElementById('bottomText').innerText = num2;
+    }
+}
 
+function btn6Clicked() {
+    if(isOperatorClicked == false && num1.length < 12) {
+        num1 += 6;
+        document.getElementById('bottomText').innerText = num1;
+    } else if(isOperatorClicked == true && num2.length < 12){
+        num2 += 6;
+        document.getElementById('bottomText').innerText = num2;
+    }
+}
 
+function btn7Clicked() {
+    if(isOperatorClicked == false && num1.length < 12) {
+        num1 += 7;
+        document.getElementById('bottomText').innerText = num1;
+    } else if(isOperatorClicked == true && num2.length < 12){
+        num2 += 7;
+        document.getElementById('bottomText').innerText = num2;
+    }
+}
 
+function btn8Clicked() {
+    if(isOperatorClicked == false && num1.length < 12) {
+        num1 += 8;
+        document.getElementById('bottomText').innerText = num1;
+    } else if(isOperatorClicked == true && num2.length < 12){
+        num2 += 8;
+        document.getElementById('bottomText').innerText = num2;
+    }
+}
 
+function btn9Clicked() {
+    if(isOperatorClicked == false && num1.length < 12) {
+        num1 += 9;
+        document.getElementById('bottomText').innerText = num1;
+    } else if(isOperatorClicked == true && num2.length < 12){
+        num2 += 9;
+        document.getElementById('bottomText').innerText = num2;
+    }
+}
+
+// functions for operator eventListeners
+
+function addBtnClicked() {
+    usedOperator("+");
+}
+
+function subBtnClicked() {
+    usedOperator("-");
+}
+
+function multiBtnClicked() {
+    usedOperator("x");
+}
+
+function divideBtnClicked() {
+    usedOperator("/");
+}
+
+function equalBtnClicked() {
+    if(num2 == 0 && operator == "/"){
+        document.getElementById('topText').innerText = 'Division By Zero ERROR';
+        document.getElementById('bottomText').innerText = 'Infinity';
+        num1 = "";
+        num2 = "";
+        result = "";
+        isOperatorClicked = false;
+    } else if(num2 != ""){
+        operate();
+    }
+}
+
+function pointBtnClicked() {
+    if(isOperatorClicked == false){
+        // checks to see if decimal has been clicked before
+        if(num1.includes('.') == false) {
+            num1 += ".";
+            document.getElementById('bottomText').innerText = num1;
+        }
+    } else if(isOperatorClicked) {
+        if(num2.includes('.') == false) {
+            num2 += '.';
+            document.getElementById('bottomText').innerText = num2;
+
+        }
+    }
+}
