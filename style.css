@@ -5,6 +5,10 @@ body {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 50px;
     background-image: linear-gradient(to top right, #261749, #292e75, #5c7cc4, #b9daff);
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+     /*prevent text selection*/
 }
 
 header {
