@@ -1,19 +1,39 @@
-const result = document.querySelector('.result');
-const numbers = document.querySelectorAll('.digits');
-const input = document.querySelector('.userInput');
-const calculator = document.querySelector('.calculator');
+// define html elements
+let button1 = document.getElementById('num1');
+let button2 = document.getElementById('num2');
+let button3 = document.getElementById('num3');
+let button4 = document.getElementById('num4');
+let button5 = document.getElementById('num5');
+let button6 = document.getElementById('num6');
+let button7 = document.getElementById('num7');
+let button8 = document.getElementById('num8');
+let button9 = document.getElementById('num9');
+let button0 = document.getElementById('num0');
+let allClear = document.getElementById('allClear');
+let backSpace = document.getElementById('backSpace');
+// operators
+let addBtn = document.getElementById('+');
+let subtractBtn = document.getElementById('-');
+let multiplyBtn = document.getElementById('x');
+let divideBtn = document.getElementById('/');
+let pointBtn = document.getElementById('.');
+let equalBtn = document.getElementById('=');
+let negativeBtn = document.getElementById('+/-');
 
-let isEqualPressed = false; // to see if = is pressed
-let displayValue = 0; // to calculate each operation in the background
-let isDecimalPressed = ''; //to see if . is pressed once and only once
 
 
-// create evenListeners for each buttons that shows on screen when clicked.
-numbers.forEach((number) => {
-    number.addEventListener('click', (e) => {
-         document.getElementById('userInput').innerHTML = e.target.value;
-    })
-})
+// define variables 
+let defBottomNum = 0;
+let isOperatorClicked = 0;
+let num1 = "";
+let num2 = "";
+let result = "";
+let operator;
+
+
+
+// create eventListeners for each buttons that shows on screen when clicked.
+
 
 
 
@@ -27,44 +47,6 @@ numbers.forEach((number) => {
 
 
 
-
-
-
-
-// basic operators
-function addition(a, b){
-    return a + b;
-}
-
-function subtraction(a, b){
-    return a - b;
-}
-
-function multiplication(a, b){
-    return a * b;
-}
-
-function division(a, b){
-    if (b == 0) {
-        alert('You Can\'t Divide a Number By Zero!');
-        return 'infinity';
-    } else{
-        return a / b;
-    }
-}
-
-// function to call on numbers
-function operate(func, a, b){
-    if (func === addition){
-        return addition(a, b);
-    } else if (func === subtraction){
-        return subtraction(a, b);
-    } else if (func === multiplication){
-        return multiplication (a, b);
-    } else if (func === division){
-        return division(a, b);
-    }
-}
 
 
 
