@@ -55,12 +55,57 @@ pointBtn.addEventListener('click', pointBtnClicked);
 equalBtn.addEventListener('click', equalBtnClicked);
 negativeBtn.addEventListener('click', negBtnClicked);
 
+// function for operators
+
+function usedOperator(clickedOperator) {
+    // prevents to click operators first
+    if (num1 != ''){
+        if (num2 == ''){
+            switch(clickedOperator){
+                case "+":
+                    operator = "+";
+                    break;
+                case "-":
+                    operator = "-";
+                    break;
+                case "x":
+                    operator = "x";
+                    break;
+                case "/":
+                    operator = '/';
+                    break;
+            }
+            isOperatorClicked = true;
+            document.getElementById('topText').innerText = `${num1} ${operator} ${num2}`;
+        }
+        else if (num2 !="") {
+            switch(clickedOperator){
+                case "+":
+                    operator = "+";
+                    break;
+                case "-":
+                    operator = "-";
+                    break;
+                case "x":
+                    operator = "x";
+                    break;
+                case "/":
+                    operator = '/';
+                    break;
+            }
+            num1 = result;
+            result = "";
+            num2 = "";
+            document.getElementById('topText').innerText = `${num1} ${operator} ${num2}`;
+            document.getElementById('bottomText').innerText = "";
+        }
+    } 
+}
 
 
 
-// store the first number that user presses into the calculator.
-// and also save which operator has been chosen and then operate() on them 
-// when = is pressed.
+
+
 
 
 
