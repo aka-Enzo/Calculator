@@ -54,6 +54,10 @@ header {
     padding: 15px;
     padding-bottom: 15px;
 }
+button.equals {
+    grid-column: 3 / 5;
+    border-radius: 2.5rem;
+}
 button {
     font-size: 30px;
     border: none;
