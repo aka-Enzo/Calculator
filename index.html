@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caramel&display=swap" rel="stylesheet">
     <script src="./script.js" defer></script>
     <title>Calculator</title>
 </head>
@@ -17,32 +19,33 @@
     <div class="container">
         <div class="calculator">
             <div class="display">
-                <output class="userInput" type="text" id="userInput">7</output>
-                <output class="result" type="text" id="result"></output>
+                <div class="topText" type="text" id="topText"></div>
+                <div class="bottomText" type="text" id="bottomText"></div>
             </div>
             <div class="buttons">
                 <button id="allClear">AC</button>
-                <button id="backSpace"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></button>
-                <button class="operators" id="sign" >+/-</button>
-                <button class="operators" id="divide" data-type="operator" value="/">&#247</button>
+                <button id="backSpace" data-type="backspace"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></button>
+                <button class="operators" id="+/-" >+/-</button>
+                <button class="operators" id="/" data-type="operator" value="/">&#247</button>
                 <button class="digits" id="num7">7</button>
                 <button class="digits" id="num8">8</button>
                 <button class="digits" id="num9">9</button>
-                <button class="operators" id="multiply">x</button>
+                <button class="operators" id="x">x</button>
                 <button class="digits" id="num4">4</button>
                 <button class="digits" id="num5">5</button>
                 <button class="digits" id="num6">6</button>
-                <button class="operators" id="subtract">&#45</button>
+                <button class="operators" id="-">&#45</button>
                 <button class="digits" id="num1">1</button>
                 <button class="digits" id="num2">2</button>
                 <button class="digits" id="num3">3</button>
-                <button class="operators"id="add">+</button>
+                <button class="operators"id="+">+</button>
                 <button class="digits" id="num0">0</button>
-                <button class="operators" id="decimal">.</button>
-                <button class="equals" id="equals">=</button>
+                <button class="operators" id=".">.</button>
+                <button class="equals" id="=">=</button>
                 
             </div>
         </div>
     </div>
+    <footer>AKA ENZO</footer>
 </body>
 </html>
