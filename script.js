@@ -117,6 +117,7 @@ function operate() {
             break;
         case "/": 
             result = divide(num1, num2);
+            result = Math.round(result*100000000)/100000000;
             break;
     }
     document.getElementById('topText').innerText = `${num1} ${operator} ${num2} =`;
