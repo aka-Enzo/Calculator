@@ -76,7 +76,7 @@ function usedOperator(clickedOperator) {
                     break;
             }
             isOperatorClicked = true;
-            document.getElementById('topText').innerText = `${num1} ${operator} ${num2}`;
+            document.getElementById('topText').innerText = num1 + " " + operator + " " + num2;
         }
         else if (num2 != "") {
             switch(clickedOperator){
@@ -96,7 +96,7 @@ function usedOperator(clickedOperator) {
             num1 = result;
             result = "";
             num2 = "";
-            document.getElementById('topText').innerText = `${num1} ${operator} ${num2}`;
+            document.getElementById('topText').innerText = num1 + " " + operator + " " + num2;
             document.getElementById('bottomText').innerText = "";
         }
     } 
@@ -245,7 +245,7 @@ function divideBtnClicked() {
 
 function equalBtnClicked() {
     if(num2 == 0 && operator == "/"){
-        document.getElementById('topText').innerText = 'Division By Zero ERROR';
+        document.getElementById('topText').innerText = 'Division By Zero';
         document.getElementById('bottomText').innerText = 'Infinity';
         num1 = "";
         num2 = "";
@@ -267,7 +267,66 @@ function pointBtnClicked() {
         if(num2.includes('.') == false) {
             num2 += '.';
             document.getElementById('bottomText').innerText = num2;
-
         }
     }
+}
+
+function negBtnClicked() {
+    let negative = "-";
+    if(isOperatorClicked == false){
+        if(num1.includes("-") == false){
+            num1 = negative + num1; 
+            document.getElementById('bottomText').innerText = num1;
+        } else if(num1.includes('-') == true){
+            num1 = num1.substring(1);
+            document.getElementById('bottomText').innerText = num1;
+        }
+    } else if(isOperatorClicked == true){
+        if(num2.includes('-') == false){
+            num2 = negative + num2; 
+            document.getElementById('bottomText').innerText = num2;
+        } else if(num2.includes('-') == true){
+            num2 = num2.substring(1);
+            document.getElementById('bottomText').innerText = num2;
+        }
+    }
+}
+
+function backSpaceClicked(){
+    if(isOperatorClicked == false){
+        num1 = num1.slice(0, -1);
+        document.getElementById('bottomText').innerText = num1;
+    } else if(isOperatorClicked == true){
+        num2 = num2.slice(0, -1);
+        document.getElementById('bottomText').innerText = num2;
+    }
+}
+
+function allClearClicked() {
+    num1 = "";
+    num2 = "";
+    result = 0;
+    isOperatorClicked = false;
+    document.getElementById('topText').innerText = "";
+    document.getElementById('bottomText').innerText = result;
+}
+
+function add(number1, number2)
+{
+    return parseFloat(number1) + parseFloat(number2);
+}
+
+function subtract(number1, number2)
+{
+    return number1 - number2;
+}
+
+function multiply(number1, number2)
+{
+    return number1 * number2;
+}
+
+function divide(number1, number2)
+{
+    return number1 / number2;
 }
