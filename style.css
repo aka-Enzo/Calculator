@@ -22,7 +22,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    
     margin-top: 10px;
 } 
 
@@ -35,10 +35,9 @@ header {
 
 .display {
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    font-size: 30px;
     padding: 5px;
+    justify-content: flex-end;
+    width: 350;
     height: 55px;
     border: 5px solid black;
     background-color: white;
@@ -46,11 +45,20 @@ header {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-.display.topText {
+.topText {
     display: flex;
+    flex: 1;
     justify-content: flex-start;
     align-items: baseline;
-    font-size: 15px;
+    font-family: "roboto";
+    font-size: 20px;
+
+}
+.bottomText {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 40px;
 }
 
 .buttons {
@@ -85,4 +93,14 @@ button:hover {
 }
 button:active {
     transform: translateY(4px);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-family: 'Caramel', cursive;
+    color: #fff;
+    font-size: 40px;
 }
